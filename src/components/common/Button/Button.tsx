@@ -17,10 +17,10 @@ export function Button({ variant = ButtonVariants.Default, children, ...rest }: 
             buttonClass += ` ${styles.buttonDisabled}`
             break
         case ButtonVariants.Outlined:
-            buttonClass += ` ${styles.buttonOulined}`
+            buttonClass += ` ${styles.buttonOutlined}`
             break
         case ButtonVariants.Text:
-            buttonClass += ` ${styles.butttonText}`
+            buttonClass += ` ${styles.buttonText}`
             break
     }
     return <button className={buttonClass} {...rest}>{children}</button>

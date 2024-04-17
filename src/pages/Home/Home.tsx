@@ -6,7 +6,7 @@ import styles from './Home.module.css'
 export function Home() {
     return (
         <div className={styles.container}>
-            <img src={dog} width="315px"/>
+            <img src={dog}/>
             <Link to='/pets'>
             <Button variant={ButtonVariants.Default}>Quero adotar</Button>
             </Link>
