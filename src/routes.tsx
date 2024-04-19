@@ -1,7 +1,7 @@
-import { createBrowserRouter } from "react-router-dom";
-import { Home } from "./pages/Home";
-import { Pets } from "./pages/Pets";
-import { PetDetails } from "./pages/PetDetails/PetDetails";
+import { createBrowserRouter } from 'react-router-dom';
+import { Home } from './pages/Home';
+import { Pets } from './pages/Pets';
+import { PetDetails } from './pages/PetDetails/PetDetails';
 
 const router = createBrowserRouter([
     {
