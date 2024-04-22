@@ -66,10 +66,10 @@ export function Pets() {
             <div className={styles.container}>
                 <Header />
                 <form className={styles.filters} onSubmit={applyFilters}>
-                    <div className={styles.colums}>
+                    <div className={styles.columns}>
                         {filterColumns.map((filter) =>
                         (
-                            <div key={filter.name} className={styles.colums}>
+                            <div key={filter.name} className={styles.column}>
                                 <Select
                                     label={filter.title}
                                     defaultValue={urlParams[filter.name]}
