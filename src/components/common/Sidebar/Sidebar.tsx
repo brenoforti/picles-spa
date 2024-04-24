@@ -1,6 +1,5 @@
 import { NavLink } from 'react-router-dom'
 import styles from './Sidebar.module.css'
-import React from 'react'
 import { Toaster, toast } from 'sonner'
 import { useShelter } from '../../../hooks/useShelter'
 
@@ -9,7 +8,7 @@ export function Sidebar() {
     const {data} = useShelter()
 
     function validate(event: React.MouseEvent){
-        const canAccess = !!data?.shelterWhatsApp
+        const canAccess = !!data?.whatsApp
 
         if(!canAccess) {
             event.preventDefault()

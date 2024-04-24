@@ -1,6 +1,6 @@
 export interface IShelter {
-    shelterName: string,
-    shelterEmail: string,
-    shelterPhone: string,
-    shelterWhatsApp: string
+    name: string,
+    email: string,
+    phone: string,
+    whatsApp: string
 }
