@@ -1,5 +1,5 @@
 import { useForm } from "react-hook-form";
-import { Button } from "../../../components/common/Button";
+import { Button, ButtonVariants } from "../../../components/common/Button";
 import { Input } from "../../../components/common/Input";
 import { Panel } from "../../../components/layout/Panel";
 import styles from './Shelter.module.css'
@@ -116,7 +116,13 @@ export function Shelter() {
                         }
                     </div>
                 
-                    <Button type="submit">Salvar dados</Button>
+                    <Button 
+                        type="submit" variant={
+                            !formState.isDirty || formState.isSubmitting ? ButtonVariants.Disabled : ButtonVariants.Default
+                        }
+                    >
+                        Salvar dados
+                    </Button>
                 </form>
             )}
         </Panel>
