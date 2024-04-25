@@ -9,23 +9,23 @@ import { useHookFormMask } from "use-mask-input";
 
 const shelterSchema = z.object({
     name: z.string()
-        .min(4, 'Nome deve ter no mínimo 4 caracteres.')
-        .max(30, 'Nome deve ter no máximo 30 caracteres.'),
+        .min(4, 'Nome deve ter no mínimo 4 caracteres!')
+        .max(30, 'Nome deve ter no máximo 30 caracteres!'),
     
     email: z.string() 
-        .email('Campo deve ser um email "ex@exemplo.com"'),
+        .email('Campo deve ser um email!'),
 
     phone: z.string()
         .refine(value => {
             const digits = value.replace(/\D/g, '').length
             return digits >= 10 && digits <= 11
-        }, 'Numero deve ter entre 10 e 11 caracteres'),
+        }, 'Numero deve ter entre 10 e 11 caracteres!'),
 
     whatsApp: z.string()
         .refine(value => {
             const digits = value.replace(/\D/g, '').length
             return digits >= 10 && digits <= 11
-        }, 'Numero deve ter entre 10 e 11 caracteres'),
+        }, 'Numero deve ter entre 10 e 11 caracteres!'),
 })
 
 type ShelterSchema = z.infer<typeof shelterSchema>
