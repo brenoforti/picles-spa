@@ -8,6 +8,8 @@ import { Button } from '../../../components/common/Button'
 import { TextArea } from '../../../components/common/TextArea'
 import { z } from 'zod'
 import styles from './PetForm.module.css'
+import { addPets } from '../../../services/pets/addPets'
+import { toast } from 'sonner'
 
 enum FormStatus {
     ADD = 'add',
@@ -41,11 +43,35 @@ export function PetForm() {
     })
     const status = id ? FormStatus.EDIT : FormStatus.ADD
 
-    function submit({ name, type, size, gender, bio }: PetSchema) {
-        console.log(name)
+    async function submit({ name, type, size, gender, bio }: PetSchema) {
+        const MESSAGE_BY_STATUS = {
+        add: {
+            loading: `Salvando ${name}`,
+            success: `${name} criado com sucesso.`,
+            error: `Não foi possível criar ${name}.`,
+        },
+        edit: {
+            loading: `Editando ${name}`,
+            success: `${name} editado com sucesso.`,
+            error: `Não foi possível editar ${name}.`,
+        },
     }
 
-    console.log({ formState })
+    const toastId = toast.loading(MESSAGE_BY_STATUS[status].loading)
+
+    try {
+        const { id } = await addPets({ name, type, size, gender, bio })
+        console.log({ id })
+        
+        toast.success(MESSAGE_BY_STATUS[status].success, {
+            id: toastId,
+            })
+        } catch {
+            toast.error(MESSAGE_BY_STATUS[status].error, {
+            id: toastId,
+            })
+        }
+    }
 
     return (
         <Panel>
