@@ -15,11 +15,11 @@ export const filterColumns: IFilterColumns[] = [
                 text: 'Todos',
             },
             {
-                value: 'Cachorro',
+                value: 'cachorro',
                 text: 'Cachorros',
             },
             {
-                value: 'Gato',
+                value: 'gato',
                 text: 'Gatos',
             },
         ],
@@ -34,15 +34,15 @@ export const filterColumns: IFilterColumns[] = [
                 text: 'Todos',
             },
             {
-                value: 'Pequeno',
+                value: 'pequeno',
                 text: 'Pequeno',
             },
             {
-                value: 'Médio',
+                value: 'medio',
                 text: 'Médio',
             },
             {
-                value: 'Grande',
+                value: 'grande',
                 text: 'Grande',
             },
         ],
@@ -57,11 +57,11 @@ export const filterColumns: IFilterColumns[] = [
                 text: 'Todos',
             },
             {
-                value: 'Fêmea',
+                value: 'femea',
                 text: 'Fêmea',
             },
             {
-                value: 'Macho',
+                value: 'macho',
                 text: 'Macho',
             },
         ],
