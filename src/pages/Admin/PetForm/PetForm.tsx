@@ -10,6 +10,7 @@ import { z } from 'zod'
 import styles from './PetForm.module.css'
 import { addPets } from '../../../services/pets/addPets'
 import { toast } from 'sonner'
+import { PictureUpload } from '../../../components/common/PictureUpload'
 
 enum FormStatus {
     ADD = 'add',
@@ -76,6 +77,7 @@ export function PetForm() {
     return (
         <Panel>
             <form className={styles.container} onSubmit={handleSubmit(submit)}>
+                <PictureUpload />
                 <div className={styles.fields}>
                     <div>
                         <Input label="Nome" {...register('name')} />
